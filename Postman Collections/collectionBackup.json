@@ -34,10 +34,13 @@
 									"",
 									"pm.sendRequest(getPetRequest, function (error, response) {",
 									"    pm.test(\"Get Pet request has OK status\", function () {",
-									"        pm.expect(response.status).to.eql(\"OK\");",
+									"        pm.expect(response.status).to.eql(\"CREATED\");",
 									"    });",
 									"});",
-									""
+									"",
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
 								],
 								"type": "text/javascript",
 								"packages": {}
